@@ -1,0 +1,146 @@
+.popular-card
+    height: 50rem
+    perspective: 150rem
+    -moz-perspective: 150rem
+    position: relative
+    @include respond(tab-port)
+        height: auto
+
+    &__side
+        height: 50rem
+        transition: .8s all ease-out
+        color: #fff
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        backface-visibility: hidden
+        box-shadow: $box-shadow
+        overflow: hidden
+        border-radius: .5rem
+        @include respond(tab-port)
+            height: auto
+            position: relative
+
+        
+        &_front
+            background: $color-white
+            @include respond(tab-port)
+            padding-bottom: 10rem
+        &_back
+            
+            transform: rotateY(-180deg)
+            background: linear-gradient(120deg,$color-brown-light, $color-brown-dark)
+            @include respond(tab-port)
+                transform: rotateY(0deg)
+                padding: 5rem
+                padding-top: 12rem
+                margin-top: -9rem
+                clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)
+
+
+
+    &:hover &__side_front
+        transform: rotateY(180deg)
+        @include respond(tab-port)
+            transform: rotateY(0deg)
+
+    &:hover &__side_back
+        transform: rotateY(0deg)
+    
+    &__img
+        background-blend-mode: hard-light
+        height: 21rem
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%)
+        &_1
+            background: $color-brown-light url(../img/popular-card-1.png) center / cover no-repeat
+        &_2
+            background: $color-brown-light url(../img/popular-card-2.png) center / cover no-repeat
+        &_3
+            background: $color-brown-light url(../img/popular-card-3.png) center / cover no-repeat
+
+        @include respond(tab-port)
+            height: 30rem
+
+    &__title
+        text-transform: uppercase
+        font-size: 2.8rem
+        letter-spacing: .2rem
+        font-weight: 300
+        text-align: right
+        position: absolute
+        top: 17rem
+        right: 0rem
+        @include respond(tab-port)
+            top: 25rem
+            font-size: 3.8rem
+    &__span
+        background: linear-gradient(90deg,$color-brown-light, $color-brown-dark)
+        padding: 1rem 2rem .3rem 2rem
+
+        &_1
+            
+        &_2
+            position: absolute
+            top: 3.4rem
+            right: 0
+            padding-bottom: 1rem
+            padding-top: 0
+            @include respond(tab-port)
+                top: 4.4rem
+
+    &__descr
+        ul
+            list-style: none
+            
+            li
+                font-size: 1.4rem
+                letter-spacing: .2rem
+                color: $color-gray
+                text-decoration-line: underline
+                text-underline-offset: .2rem
+                
+                text-align: center
+                font-weight: 700
+                
+                &:not(:last-child)
+                    margin-bottom: 2rem
+                @include respond(tab-port)
+                    font-size: 2rem
+
+    &__backside
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        text-align: center
+        @include respond(tab-port)
+            position: relative
+            top: 0%
+            left: 0%
+            transform: translate(0%,0%)
+        
+    &__text
+        
+        text-transform: uppercase
+        letter-spacing: .2rem
+        color: $color-white
+        
+        &_1
+            font-size: 1.4rem
+            font-weight: 300
+            margin-bottom: 10rem
+        &_2
+            font-size: 6rem
+            font-weight: 500
+            margin-bottom: 4rem
+
+
+
+            
+            
+
+    
+
+    
+
